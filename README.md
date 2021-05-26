@@ -1,2 +1,2 @@
 # Bloom Filter
-This is a program for Bloom Filter in C++
+This is a program for Bloom Filter in C++ & Java
