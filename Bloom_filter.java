@@ -114,7 +114,6 @@ class Bloom_filter extends JFrame implements ActionListener{
 			hash += hash * 7 + name.charAt(i) * Math.pow(p, i);
 			hash = hash % 100;
 		}
-		//cout << "Final Hash 4: " << hash << endl;
 		return hash;
 	}
 	
