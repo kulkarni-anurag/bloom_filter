@@ -7,6 +7,7 @@ Gr No.: 11910287
 */
 
 #include <iostream>
+#include <bits/stdc++.h>
 #define MAX 100
 
 using namespace std;
@@ -42,6 +43,17 @@ int hash3(string name){
     return hash;
 }
 
+int hash4(string name){
+    int hash = 3;
+    int p = 7;
+    for (int i = 0; i < name.size(); i++) {
+        hash += hash * 7 + name[i] * pow(p, i);
+        hash = hash % MAX;
+    }
+	//cout << "Final Hash 4: " << hash << endl;
+    return hash;
+}
+
 void display(bool set[]){
     cout << "\nWelcome to display!" << endl;
     
@@ -54,8 +66,9 @@ bool lookup(bool set[], string name){
     int one = hash1(name);
     int two = hash2(name);
     int three = hash3(name);
+	int four = hash4(name);
     
-    if(set[one] && set[two] && set[three]){
+    if(set[one] && set[two] && set[three] && set[four]){
         return 1;
     } else {
         return 0;
@@ -96,10 +109,12 @@ void insert(bool set[]){
         int one = hash1(name);
         int two = hash2(name);
         int three = hash3(name);
+		int four = hash4(name);
         
         set[one] = 1;
         set[two] = 1;
         set[three] = 1;
+		set[four] = 1;
         
         cout << "\nUsername " << name << " Inserted!" << endl;
     }
