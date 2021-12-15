@@ -7,7 +7,7 @@ Gr No.: 11910287
 */
 
 #include <iostream>
-#include <bits/stdc++.h>
+#include <cmath>
 #define MAX 100
 
 using namespace std;
